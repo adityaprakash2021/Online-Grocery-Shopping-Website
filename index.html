@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Grocery Shopping Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-vector/hand-drawn-pattern-background_23-2150905251.jpg?ga=GA1.1.986344448.1744132827&semt=ais_hybrid&w=740'); /* Add your image URL here */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        label {
+        font-weight: bold;
+        color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Grocery Shopping Website</h1>
+    </header>
+
+    <div class="container">
+        <form action="{{ url_for('order') }}" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="3" required></textarea><br>
+
+            <button type="submit">Continue to Shop</button>
+        </form>
+    </div>
+</body>
+</html>
